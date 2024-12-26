@@ -1,5 +1,3 @@
-package org.example;
-
 import java.util.Scanner;
 
 public class Fibanocci {
@@ -18,7 +16,7 @@ public class Fibanocci {
             System.out.println("Output :"+sum);
 
         }
-        //System.out.println("Sum of the numbers :" + sum);
+        System.out.println("Sum of the numbers :" + sum);
 
     }
 }

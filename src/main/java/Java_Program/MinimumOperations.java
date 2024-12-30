@@ -26,7 +26,7 @@ public class MinimumOperations {
         System.out.println(minimumOperations(nums));
 
         String[] name={"hi","hello"};
-        if(name[1].contains("e")){
+        if(name[1].contains("l")){
             System.out.println("Hello");
         }else{
             System.out.println("Hi");

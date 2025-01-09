@@ -32,9 +32,13 @@ public class LinkedList {
 
     }
 
-    public void addFirst(){
+    public void addFirst(int data){
 
+        Node newNode=new Node(data);
 
+        Node current=head;
+        head=newNode;
+        newNode.next=current;
     }
 
 
@@ -61,6 +65,8 @@ public class LinkedList {
         for (int i = 0; i < k; i++) {
             obj.addElement(sc.nextInt());
         }
+
+        obj.addFirst(1);
 
         obj.printList();
     }

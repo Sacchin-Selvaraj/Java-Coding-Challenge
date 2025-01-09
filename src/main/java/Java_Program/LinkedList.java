@@ -17,7 +17,6 @@ public class LinkedList {
         }
     }
 
-
     public void addElement(int data){
         Node newNode=new Node(data);
         Node current=head;
@@ -65,7 +64,23 @@ public class LinkedList {
 
         }
         head=prev;
+    }
 
+    private void insertElement(int data,int afterData) {
+
+        Node newNode=new Node(data);
+        Node current=head;
+        Node temp=null;
+
+        while (current!=null&&current.data!=afterData){
+
+            current=current.next;
+        }
+        temp=current.next;
+        current.next=newNode;
+        newNode.next=temp;
+
+        printList();
 
     }
 
@@ -104,10 +119,14 @@ public class LinkedList {
 
         obj.printList();
 
+        System.out.println("Enter the element need to insert :");
+        int insert=sc.nextInt();
+        int insertAfter=sc.nextInt();
+
+        obj.insertElement(insert,insertAfter);
+
         obj.reverseList();
         System.out.println("After reversing the linked list");
         obj.printList();
     }
-
-
 }

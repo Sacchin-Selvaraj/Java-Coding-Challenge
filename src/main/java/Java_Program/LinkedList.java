@@ -48,7 +48,24 @@ public class LinkedList {
         while (current.next!=null &&current.next.data!=data){
             current=current.next;
         }
-        current.next=current.next.next;
+        if(current.next!=null)
+            current.next=current.next.next;
+
+    }
+
+    private void reverseList() {
+        Node prev=null;
+        Node current=head;
+        Node next=null;
+        while(current!=null){
+            next=current.next;
+            current.next=prev;
+            prev=current;
+            current=next;
+
+        }
+        head=prev;
+
 
     }
 
@@ -86,5 +103,11 @@ public class LinkedList {
         obj.deleteElement(del);
 
         obj.printList();
+
+        obj.reverseList();
+        System.out.println("After reversing the linked list");
+        obj.printList();
     }
+
+
 }

@@ -41,6 +41,16 @@ public class LinkedList {
         newNode.next=current;
     }
 
+    public void deleteElement(int data){
+
+        Node current=head;
+
+        while (current.next!=null &&current.next.data!=data){
+            current=current.next;
+        }
+        current.next=current.next.next;
+
+    }
 
     public void printList(){
 
@@ -67,6 +77,13 @@ public class LinkedList {
         }
 
         obj.addFirst(1);
+
+        obj.printList();
+
+        System.out.println("Enter the number to delete : ");
+        int del=sc.nextInt();
+
+        obj.deleteElement(del);
 
         obj.printList();
     }

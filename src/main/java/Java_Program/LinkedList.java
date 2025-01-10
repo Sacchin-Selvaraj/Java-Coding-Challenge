@@ -92,10 +92,7 @@ public class LinkedList {
             current = current.next;
         }
         System.out.println();
-
-
     }
-
 
     public static void main(String[] args) {
 

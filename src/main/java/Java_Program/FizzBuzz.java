@@ -1,3 +1,5 @@
+package Java_Program;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,7 +11,7 @@ public class FizzBuzz {
         int i = 1;
         while (n-- > 0) {
             if (i % 3 == 0 && i % 5 == 0) {
-                fizz.add("FizzBuzz");
+                fizz.add("Java_Program.FizzBuzz");
             } else if (i % 3 == 0) {
                 fizz.add("Fizz");
             } else if (i % 5 == 0) {

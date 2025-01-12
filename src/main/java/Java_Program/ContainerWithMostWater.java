@@ -22,7 +22,7 @@ public class ContainerWithMostWater {
                     max = temp;
 
             }
-        System.out.println(max);
+
         return max;
 
 

@@ -12,7 +12,7 @@ public class ReverseInteger {
         }
 
         System.out.println("Output :"+sum);
-        if(sum>2147483648l)
+        if(sum>21474836l)
             return 0;
         else
             return sum;

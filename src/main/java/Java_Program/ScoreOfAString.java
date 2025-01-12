@@ -15,12 +15,13 @@ public class ScoreOfAString {
                 System.out.println(s.charAt(i) - s.charAt(i + 1));
             }
         }
+        System.out.println(sum);
         return sum;
 
     }
 
     public static void main(String[] args) {
-        String s="zaz";
+        String s="Sacchin";
 
         System.out.println(scoreOfString(s));
 

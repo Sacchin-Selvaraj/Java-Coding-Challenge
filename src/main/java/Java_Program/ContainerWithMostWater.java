@@ -29,7 +29,7 @@ public class ContainerWithMostWater {
     }
 
     public static void main(String[] args) {
-        int[] num={1,8,6,2,5,4,8,3,7,9};
+        int[] num={1,8,6,2,5,4,1,2,1,8};
 
         System.out.println("Maximum Unit of Water :"+ContainerWithMostWater.toGetMaximumWater(num));
 

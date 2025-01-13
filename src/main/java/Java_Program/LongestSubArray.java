@@ -22,7 +22,7 @@ public class LongestSubArray {
     }
 
     public static void main(String[] args) {
-        String array="sacchin";
+        String array="Sacchin";
         int result=LongestSubArray.findLongestArray(array);
         System.out.println("Maximum SubString of Array :"+result);
 

@@ -18,7 +18,6 @@ public class LongestSubArray {
             Max_Length=Math.max(Max_Length,i-left+1);
         }
         return Max_Length;
-
     }
 
     public static void main(String[] args) {

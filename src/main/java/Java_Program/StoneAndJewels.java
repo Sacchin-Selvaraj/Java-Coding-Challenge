@@ -7,6 +7,7 @@ public class StoneAndJewels {
 
     public static int numJewelsInStones(String jewels, String stones) {
 
+        int count=0;
         HashSet<Character> hashSet=new HashSet<>();
 
         for (char c:stones.toCharArray()){
@@ -14,12 +15,18 @@ public class StoneAndJewels {
         }
         System.out.println(hashSet);
 
-        return 1;
+        for (int i = 0; i < stones.length(); i++) {
+            for (int j = 0; j < jewels.length(); j++) {
+                if(stones.charAt(i)-jewels.charAt(j)==0)
+                    count=count+1;
+            }
+        }
+        return count;
     }
 
     public static void main(String[] args) {
-        String jewel="aA";
-        String stones="aAAbbBB";
+        String jewel="ebd";
+        String stones="bbb";
         System.out.println("Output : "+numJewelsInStones(jewel,stones));
 
     }

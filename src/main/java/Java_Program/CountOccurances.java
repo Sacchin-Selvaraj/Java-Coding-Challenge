@@ -12,19 +12,14 @@ public class CountOccurances {
             hashtable.put(c, hashtable.getOrDefault(c, 0) + 1);
         }
         System.out.println(hashtable);
-        HashSet<Character> set= new HashSet<>();
-        for (Character c : s.toCharArray()) {
-            set.add(c);
+        boolean res=true;
+        for (int i = 0; i < s.length(); i++) {
+            int n=hashtable.get(s.charAt(i));
+            if(n%2!=0){
+                res=false;
+            }
         }
-        char[] temp=new char[set.size()];
-
-        for (int i = 0; i < hashtable.size(); i++) {
-            int n=hashtable.get()
-        }
-
-
-
-        return true;
+        return res;
     }
 
     public static void main(String[] args) {

@@ -19,11 +19,12 @@ public class CountOccurances {
                 res=false;
             }
         }
+        System.out.println(hashtable.keySet());
         return res;
     }
 
     public static void main(String[] args) {
-        String s = "abacbc";
+        String s = "Sacchin";
         System.out.println(areOccurrencesEqual(s));
     }
 

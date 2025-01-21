@@ -10,6 +10,7 @@ public class GroupOfAnagrams {
             char[] ch=str.toCharArray();
             Arrays.sort(ch);
             String temp=new String(ch);
+            System.out.println(temp);
             if(map.containsKey(temp)){
                 a.get(map.get(temp)).add(str);
             }else{

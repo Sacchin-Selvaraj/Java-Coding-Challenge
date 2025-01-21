@@ -3,7 +3,6 @@ package Java_Program;
 import java.util.*;
 
 public class GroupOfAnagrams {
-
     public static List<List<String>> groupAnagrams(String[] strs) {
         Map<String ,Integer>map=new HashMap<>();
         List<List<String>> a = new ArrayList<>();

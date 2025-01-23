@@ -54,11 +54,8 @@ public class AddTwoNumUsingLinkedList {
             dummy.next=new ListNode(num);
             dummy=dummy.next;
         }
-
         return res.next;
-
     }
-
     public void printLinkedList(ListNode listNode){
         while (listNode!=null){
             System.out.println(listNode.data);

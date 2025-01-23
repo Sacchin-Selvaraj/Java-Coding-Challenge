@@ -1,27 +1,29 @@
 package Java_Program;
 
-import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Queue;
 
 public class SubDomainCount {
 
     public static List<String> subdomainVisits(String[] cpdomains) {
 
-        Queue<String> queue=new ArrayDeque<>();
-        String temp = null;
+        HashMap<String,Integer> map=new HashMap<>();
         for (String word : cpdomains) {
-            temp = word;
+            String[] words = word.split(" ");
+            int num = Integer.parseInt(words[0]);
+
+            map.put(words[1], map.getOrDefault(words[1], 0) + num);
+            while (words[1].contains(".")) {
+                words[1] = words[1].substring(words[1].indexOf(".")+1);
+                map.put(words[1], map.getOrDefault(words[1], 0) + num);
+            }
         }
-        for (int i = temp.length() - 1; i > 0; i--) {
-
-        }
-
-        System.out.println(temp);
-
-
-        return null;
-
+            List<String> res=new ArrayList<>();
+            for (String word1:map.keySet()){
+                res.add(map.get(word1)+" "+word1);
+            }
+            return res;
     }
 
     public static void main(String[] args) {

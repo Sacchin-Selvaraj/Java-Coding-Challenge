@@ -1,10 +1,6 @@
 package Java_Program;
 
-import java.util.List;
-
 public class AddTwoNumUsingLinkedList {
-
-
 
     class ListNode {
         int data;
@@ -87,6 +83,4 @@ public class AddTwoNumUsingLinkedList {
         ListNode l3=obj.addTwoNumbers(l1,l2);
         obj.printLinkedList(l3);
     }
-
-
 }

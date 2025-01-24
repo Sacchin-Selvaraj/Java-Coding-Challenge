@@ -7,21 +7,24 @@ public class FirstUniqueCharacter {
 
     public static Character findUnique(String s){
 
-        Queue<Character> queue=new ArrayDeque<>();
-        char res=' ';
-        for (Character c:s.toCharArray()){
-            if(!queue.isEmpty() && queue.peek()==c){
-                queue.poll();
-                continue;
-            }
-            queue.offer(c);
+        int[] a=new int[26];
+        char[] c=s.toCharArray();
+        for (int i = 0; i < s.length(); i++) {
+            a[c[i]-'a']++;
         }
+        char res=' ';
+        for (int i = 0; i < a.length; i++) {
+            if(a[i]==1){
+                res = (char) ('a'+ i);
+                break;
 
-        return queue.poll();
+            }
+        }
+        return res;
     }
 
     public static void main(String[] args) {
-        String s="QWERTYUIOREWWQTYUI";
+        String s="sacchinsa";
         System.out.println(findUnique(s));
     }
 }

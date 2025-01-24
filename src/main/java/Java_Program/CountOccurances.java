@@ -6,7 +6,6 @@ import java.util.Hashtable;
 public class CountOccurances {
 
     public static boolean areOccurrencesEqual(String s) {
-
         Hashtable<Character, Integer> hashtable = new Hashtable<>();
         for (Character c : s.toCharArray()) {
             hashtable.put(c, hashtable.getOrDefault(c, 0) + 1);
@@ -22,7 +21,6 @@ public class CountOccurances {
         System.out.println(hashtable.keySet());
         return res;
     }
-
     public static void main(String[] args) {
         String s = "Sacchin";
         System.out.println(areOccurrencesEqual(s));

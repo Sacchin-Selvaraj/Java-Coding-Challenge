@@ -1,0 +1,5 @@
+Summary
+Create DTO Classes: Define DTO classes that only include the fields you want to expose to the API.
+Mapping Methods: Implement mapping methods to convert between entities and DTOs.
+Use DTOs in Controllers: Change your controller methods to return DTOs instead of entity objects.
+Using DTOs not only helps avoid circular references but also improves the control you have over your API response structure. This approach can also enhance performance by sending only the necessary data.

@@ -55,7 +55,6 @@ public class MaximumLengthofWord {
             return maxProduct;
         }
 
-
     public static void main(String[] args) {
 
         String[] words = {"abcw", "baz", "foo", "bar", "xtfn", "abcdef"};

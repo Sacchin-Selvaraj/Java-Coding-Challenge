@@ -8,6 +8,7 @@ public class PangramChecking {
 
         int[] res=new int[26];
         word=word.toLowerCase();
+        
         System.out.println(word);
         for (char c:word.toCharArray()){
             res[c-'a']++;

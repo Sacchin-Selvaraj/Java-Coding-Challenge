@@ -16,7 +16,7 @@ public class RectangularMatrix {
         for (int i = num[0][0]; i <= num[1][0] ; i++) {
             for (int j = num[0][1]; j <= num[1][1] ; j++) {
                 sum=sum+matrix[i][j];
-                System.out.print(matrix[i][j]);
+                System.out.print(" "+matrix[i][j]);
             }
             System.out.println();
         }

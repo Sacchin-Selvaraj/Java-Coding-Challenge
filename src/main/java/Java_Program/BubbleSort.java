@@ -1,7 +1,6 @@
 package Java_Program;
 
 public class BubbleSort {
-
     public static void toSort(int[] num){
         int temp=0;
         for(int i=0;i< num.length;i++){
@@ -16,7 +15,6 @@ public class BubbleSort {
         for(int nums : num){
             System.out.print(nums+" ");
         }
-
     }
     public static void main(String[] args) {
         int[] num={2,3,1,8,5,6,0};

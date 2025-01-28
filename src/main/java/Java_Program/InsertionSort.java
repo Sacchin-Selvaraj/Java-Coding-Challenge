@@ -14,14 +14,11 @@ public class InsertionSort {
             }
             colour[j+1]=key;
         }
-
-
         for(int num:colour){
             System.out.print(num+" ");
         }
 
     }
-
     public static void main(String[] args) {
         int[] colour={5,4,3,2,6,9,4,2,1,0};
         InsertionSort.toSort(colour);

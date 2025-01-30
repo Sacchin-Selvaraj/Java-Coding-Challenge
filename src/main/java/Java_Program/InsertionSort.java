@@ -21,7 +21,7 @@ public class InsertionSort {
     }
     public static void main(String[] args) {
         int[] colour={5,4,3,2,6,9,4,2,1,0};
-        InsertionSort.toSort(colour);
+        toSort(colour);
 
     }
 }

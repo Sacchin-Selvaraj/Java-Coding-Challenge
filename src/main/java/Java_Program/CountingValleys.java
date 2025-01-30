@@ -2,8 +2,6 @@ package Java_Program;
 
 public class CountingValleys {
 
-
-
     public static void main(String[] args) {
         String str="UDDDUDUU";
         int res=0,count=0;

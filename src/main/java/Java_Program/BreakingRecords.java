@@ -8,7 +8,6 @@ public class BreakingRecords {
         int min=Integer.MAX_VALUE;
         int max=Integer.MIN_VALUE;
         int highest_record=0,lowest_record=0;
-
         for (int i = 0; i < arr.length; i++) {
             if (arr[i]<min){
                 min=arr[i];

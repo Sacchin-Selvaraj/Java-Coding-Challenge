@@ -5,6 +5,19 @@ import java.util.List;
 
 public class SquareNumbers {
 
+    static {
+        System.out.println("4th static block");
+    }
+    static {
+        System.out.println("3rd static block");
+    }
+    static {
+        System.out.println("2nd static block");
+    }
+    static {
+        System.out.println("static block");
+    }
+
 
     public static void main(String[] args) {
 
@@ -12,6 +25,7 @@ public class SquareNumbers {
 
         nums = nums.stream().map(n -> n * n).toList();
 
+        System.out.println( );
         System.out.println(nums);
         System.out.println("----------------------------------------");
 

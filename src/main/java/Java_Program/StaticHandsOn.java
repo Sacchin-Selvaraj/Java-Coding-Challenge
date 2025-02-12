@@ -6,8 +6,11 @@ class A{
         System.out.println("Hi");
     }
 
-    private void kite(){
+    public static void kite(){
         System.out.println("hello");
+    }
+    public void ball(){
+
     }
 }
 
@@ -17,22 +20,13 @@ class B extends A{
         super();
     }
 
-    public static void kite(){
-
-        System.out.println("hello world");
-    }
-    public static void ball(){
-
-    }
-
 }
-
 
 public class StaticHandsOn {
 
     public static void main(String[] args) {
 
         B obj=new B();
-        obj.kite();
+        A.kite();
     }
 }

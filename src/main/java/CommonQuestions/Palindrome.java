@@ -29,7 +29,6 @@ public class Palindrome {
         System.out.println("remaining");
         System.out.println(spliterator.estimateSize());
 
-
          spliterator.forEachRemaining(System.out::println);
 
 

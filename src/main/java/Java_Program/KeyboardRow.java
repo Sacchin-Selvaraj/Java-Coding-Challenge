@@ -26,7 +26,6 @@ public class KeyboardRow {
         }
         return list.toArray(new String[0]);
     }
-
     public static void main(String[] args) {
         String[] words={"Hello","Alaska","Dad","Peace"};
         System.out.println(Arrays.toString(findWords(words)));

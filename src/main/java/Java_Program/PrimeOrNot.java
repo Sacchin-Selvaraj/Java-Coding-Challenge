@@ -14,7 +14,6 @@ public class PrimeOrNot {
         for (int i = 0; i < n; i++) {
             num[i]=sc.nextInt();
         }
-
         Boolean[] res=new Boolean[n];
         for (int i = 0; i < n; i++) {
             res[i]=checkPrimeOrNot(num[i]);
@@ -25,7 +24,7 @@ public class PrimeOrNot {
 
     private static Boolean checkPrimeOrNot(int i) {
         if (i <= 1) {
-            return false; // 1, 0, and negative numbers are not prime
+            return false;
         }
         System.out.println("Square Root"+Math.sqrt(i));
         for (int j = 2; j < Math.sqrt(i); j++) {

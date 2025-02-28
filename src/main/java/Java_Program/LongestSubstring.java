@@ -28,7 +28,7 @@ public class LongestSubstring {
 
     public static void main(String[] args) {
 
-        String str="ghtffggttreewwijhytgvvcxseruiolmnbvcxswqwertyuiokmnbvfcdsxcvbhgfdsxcvbnjiuytrd";
+        String str="abcabcabb";
         System.out.println(substring(str));
 
     }

@@ -7,14 +7,12 @@ public class FindSecondNumber {
 
         int secondMin = Integer.MAX_VALUE, secondMax = Integer.MIN_VALUE, firstMax = Integer.MIN_VALUE, firstMin = Integer.MAX_VALUE;
         for (int i = 0; i < arr.length; i++) {
-
             if (arr[i] > firstMax) {
                 secondMax = firstMax;
                 firstMax = arr[i];
             } else if (arr[i] > secondMax && arr[i] != firstMax) {
                 secondMax = arr[i];
             }
-
             if (arr[i] < firstMin) {
                 secondMin = firstMin;
                 firstMin = arr[i];

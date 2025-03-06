@@ -21,7 +21,6 @@ public class FindSecondNumber {
             } else if (arr[i] < secondMin && arr[i] != firstMin) {
                 secondMin = arr[i];
             }
-
         }
         System.out.println(secondMax);
         System.out.println("Second Min " + secondMin);

@@ -1,6 +1,7 @@
 package Java_Program;
 
 public class FindSecondNumber {
+
     public static void main(String[] args) {
         int[] arr = {4, 6, 2, 9, 7, 1, 1, 3, 4, 9, 9, 1};
         int secondMin = Integer.MAX_VALUE, secondMax = Integer.MIN_VALUE, firstMax = Integer.MIN_VALUE, firstMin = Integer.MAX_VALUE;

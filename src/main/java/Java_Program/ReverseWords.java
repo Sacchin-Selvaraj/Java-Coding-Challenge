@@ -22,7 +22,6 @@ public class ReverseWords {
         }
         return stringBuilder.toString();
     }
-
     public static void main(String[] args) {
         String s="  hello world  ";
         System.out.println(reverseWords(s));

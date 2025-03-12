@@ -1,4 +1,4 @@
-package Java_Program;
+package DSA;
 
 public class BubbleSort {
     public static void toSort(int[] num){

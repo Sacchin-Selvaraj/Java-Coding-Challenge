@@ -75,4 +75,17 @@ public class Employee {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", role='" + role + '\'' +
+                ", salary=" + salary +
+                ", exp=" + exp +
+                ", leave_balance=" + leave_balance +
+                ", location='" + location + '\'' +
+                '}';
+    }
 }

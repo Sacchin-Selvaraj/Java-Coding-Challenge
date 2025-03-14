@@ -1,29 +1,46 @@
 package Java_Program;
 
-import java.util.Comparator;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.PriorityQueue;
 
 public class ReorganizeString {
     public static String reorganizeString(String s) {
 
-        HashMap<Character,Integer> map=new HashMap<>();
-        for (Character c:s.toCharArray()){
-            map.put(c,map.getOrDefault(c,0)+1);
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (Character c : s.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
         }
 
-        List<Map.Entry<Character,Integer>> list=map.entrySet().stream()
-                .sorted(Map.Entry.<Character,Integer>comparingByValue().reversed()).toList();
+        StringBuilder str=new StringBuilder();
+        PriorityQueue<Character> queue = new PriorityQueue<>((a, b) -> map.get(b) - map.get(a));
+        queue.addAll(map.keySet());
+        while (queue.size() >= 2) {
 
-        for (Map.Entry<Character,Integer> entry:list){
-            System.out.println(entry.getKey()+" : "+entry.getValue());
+            char c1 = queue.poll();
+            char c2 = queue.poll();
+
+            str.append(c1);
+            str.append(c2);
+
+            map.put(c1,map.get(c1)-1);
+            map.put(c2,map.get(c2)-1);
+
+            if (map.get(c1)>0) queue.add(c1);
+            if (map.get(c2)>0) queue.add(c2);
+
         }
-        return null;
+
+        if (!queue.isEmpty()){
+            char c1=queue.poll();
+            if (map.get(c1)>1) return "";
+
+            str.append(c1);
+        }
+        return str.toString();
     }
 
     public static void main(String[] args) {
-        String str="aabcdd";
+        String str = "aabcdd";
         System.out.println(reorganizeString(str));
     }
 }

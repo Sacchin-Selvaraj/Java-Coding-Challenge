@@ -22,5 +22,9 @@ public class SecondHighestSalary {
                 Comparator.comparingDouble(Employee::getSalary).reversed()).skip(1).findFirst();
 
         System.out.println(employee1.get().salary);
+
+        List<Employee> employee3=employeeList.stream().filter(employee2 -> !employee2.leave_balance ).toList();
+        System.out.println(employee3);
+
     }
 }

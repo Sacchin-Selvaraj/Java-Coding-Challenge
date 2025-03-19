@@ -1,6 +1,7 @@
 package Streams;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class SecondHighestSalary {
 
@@ -34,6 +35,11 @@ public class SecondHighestSalary {
 
         List<Employee> employeeList3=employeeList.stream().sorted(Comparator.comparing(Employee::getAge).reversed()).toList();
         System.out.println(employeeList3);
+
+        Map<String,List<Employee>> group=employeeList.stream().collect(Collectors.groupingBy(Employee::getLocation));
+        System.out.println("group"+group);
+
+        group.forEach((s, employees) -> System.out.println(s+" - "+employees));
 
     }
 }

@@ -24,5 +24,14 @@ public class LargestNumber {
         Optional<Integer> second =list1.stream().sorted(Comparator.reverseOrder()).distinct().skip(1).findFirst();
         System.out.println(second.orElse(-1));
 
+        List<Integer> list2=Arrays.asList(1,2,3);
+        double avg=list2.stream().mapToInt(Integer::intValue).average().orElse(0.00);
+        System.out.println("Average "+avg);
+
+        List<Integer> list3=Stream.iterate(0,integer -> integer+2).limit(10).toList();
+        System.out.println(list3);
+
+
+
     }
 }

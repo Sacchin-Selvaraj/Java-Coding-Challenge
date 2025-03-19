@@ -25,7 +25,14 @@ public class Strings {
         List<String> list=nestedList.stream().flatMap(List::stream).toList();
         System.out.println(list);
 
+        List<Integer> numbers0 = Arrays.asList(1, 2, 3, 4, 5);
+        Map<String,Double> map2=numbers0.stream().collect(Collectors.teeing(
+                Collectors.averagingDouble(n->n),
+                Collectors.summingDouble(n->n),
+                (sum,Average) -> Map.of("Average" ,sum,"Sum",Average)
+        ));
 
+        System.out.println(map2);
 
 
 
@@ -49,15 +56,15 @@ public class Strings {
         System.out.println(res);
 
         List<Integer> numbers3 = Arrays.asList(2, 3, 4, 5, 6, 7, 8, 9, 10);
-        Map<Boolean,List<Integer>> map2=numbers3.stream().collect(Collectors.partitioningBy(integer -> isprime(integer)));
-        System.out.println(map2);
+        Map<Boolean,List<Integer>> map3=numbers3.stream().collect(Collectors.partitioningBy(integer -> isprime(integer)));
+        System.out.println(map3);
 
     }
 
     private static boolean isprime(Integer integer) {
         if (integer<=1)
             return false;
-        for (int i = 2; i < Math.sqrt(integer); i++) {
+        for (int i = 2; i <= Math.sqrt(integer); i++) {
             if (integer%i==0)
                 return false;
 

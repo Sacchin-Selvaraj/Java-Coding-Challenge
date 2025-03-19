@@ -20,6 +20,15 @@ public class Strings {
         String word3=words.stream().min(Comparator.comparing(String::length)).get();
         System.out.println(word3);
 
+        List<List<String>> nestedList = Arrays.asList( Arrays.asList("Alice", "Bob"),
+                Arrays.asList("Charlie", "David") );
+        List<String> list=nestedList.stream().flatMap(List::stream).toList();
+        System.out.println(list);
+
+
+
+
+
         List<Integer> list1 = Arrays.asList(1, 2, 3);
         List<Integer> list2 = Arrays.asList(4, 5, 6);
         List<Integer> list3 = Arrays.asList(9,7,8);

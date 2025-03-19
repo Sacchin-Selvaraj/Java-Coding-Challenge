@@ -1,8 +1,6 @@
 package Streams;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -18,5 +16,13 @@ public class LargestNumber {
         Character res=str.chars().mapToObj(c->(char)c).filter(ch->str.indexOf(ch)==str.lastIndexOf(ch)).findFirst().get();
 
         System.out.println(res);
+
+        List<Integer> list1=Arrays.asList(1,2,3,4,5,6,7,8,8,8,8,8);
+        Map<Boolean,List<Integer>> listMap=list1.stream().collect(Collectors.partitioningBy(o -> o%2==0));
+        System.out.println(listMap);
+
+        Optional<Integer> second =list1.stream().sorted(Comparator.reverseOrder()).distinct().skip(1).findFirst();
+        System.out.println(second.orElse(-1));
+
     }
 }

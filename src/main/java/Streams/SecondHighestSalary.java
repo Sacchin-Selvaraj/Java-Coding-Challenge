@@ -32,7 +32,8 @@ public class SecondHighestSalary {
         List<Employee> employeeList2=employeeList.stream().sorted(Comparator.comparingDouble(Employee::getSalary)).toList();
         System.out.println(employeeList2);
 
-
+        List<Employee> employeeList3=employeeList.stream().sorted(Comparator.comparing(Employee::getAge).reversed()).toList();
+        System.out.println(employeeList3);
 
     }
 }

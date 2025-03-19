@@ -34,7 +34,8 @@ public class Strings {
 
         System.out.println(map2);
 
-
+        List<Integer> square=numbers0.stream().map(integer -> integer*integer).toList();
+        System.out.println(square);
 
         List<Integer> list1 = Arrays.asList(1, 2, 3);
         List<Integer> list2 = Arrays.asList(4, 5, 6);

@@ -26,5 +26,13 @@ public class SecondHighestSalary {
         List<Employee> employee3=employeeList.stream().filter(employee2 -> !employee2.leave_balance ).toList();
         System.out.println(employee3);
 
+        List<Employee> employeeList1=employeeList.stream().sorted((o1, o2)-> (int) (o1.getSalary()- o2.getSalary())).toList();
+        System.out.println(employeeList1);
+
+        List<Employee> employeeList2=employeeList.stream().sorted(Comparator.comparingDouble(Employee::getSalary)).toList();
+        System.out.println(employeeList2);
+
+
+
     }
 }

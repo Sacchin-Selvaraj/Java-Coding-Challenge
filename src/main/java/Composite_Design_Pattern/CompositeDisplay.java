@@ -11,7 +11,7 @@ public class CompositeDisplay {
         Component ram=new Leaf("ram",5000);
         Component hardDrive=new Leaf("hardDrive",3000);
 
-        Composite pheriperal=new Composite("Pheripheral");
+        Composite pheriperal=new Composite("Peripheral");
         Composite computer=new Composite("Computer");
         Composite motherBoard=new Composite("MotherBoard");
         Composite cabinet=new Composite("Cabinet");

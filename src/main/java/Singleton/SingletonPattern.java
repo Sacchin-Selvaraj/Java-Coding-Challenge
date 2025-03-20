@@ -19,6 +19,5 @@ public class SingletonPattern {
         } else {
             System.out.println("obj1 and obj2 are different instances");
         }
-
     }
 }

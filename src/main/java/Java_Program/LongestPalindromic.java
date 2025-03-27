@@ -3,7 +3,6 @@ package Java_Program;
 public class LongestPalindromic {
 
     public static String longestPalindrome(String s) {
-
         if(s.length()==1)
             return s;
         int count,max=0;

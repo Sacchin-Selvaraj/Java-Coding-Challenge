@@ -5,6 +5,7 @@ public class defaultInterface {
         Dogs dog=new Dogs();
         dog.display();
         dog.show();
+        Animals.shows();
     }
 }
 interface Animals{
@@ -12,6 +13,9 @@ interface Animals{
         System.out.println("hello world");
     }
     void display();
+    static void shows(){
+        System.out.println("static method");
+    }
 }
 
 class Dogs implements Animals{

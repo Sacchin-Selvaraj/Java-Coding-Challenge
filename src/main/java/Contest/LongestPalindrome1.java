@@ -62,7 +62,6 @@ public class LongestPalindrome1 {
         list.add(substring);
         findSubstrings(str, left, right - 1,list);
     }
-
     public static List<String> findSubstring(String str) {
         List<String> list = new ArrayList<>();
         findSubstrings(str, 0, str.length() - 1,list);
@@ -70,8 +69,8 @@ public class LongestPalindrome1 {
     }
 
     public static void main(String[] args) {
-        String s="b";
-        String t="aaaa";
+        String s="abc";
+        String t="def";
         System.out.println(longestPalindrome(s,t));
     }
 }

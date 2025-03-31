@@ -9,8 +9,9 @@ public class Employee {
     public int exp;
     public boolean leave_balance;
     public String location;
+    public String gender;
 
-    public Employee(String name, int age, String role, double salary, int exp, boolean leave_balance, String location) {
+    public Employee(String name, int age, String role, double salary, int exp, boolean leave_balance, String location, String gender) {
         this.name = name;
         this.age = age;
         this.role = role;
@@ -18,6 +19,15 @@ public class Employee {
         this.exp = exp;
         this.leave_balance = leave_balance;
         this.location = location;
+        this.gender = gender;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getName() {

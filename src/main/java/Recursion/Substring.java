@@ -1,6 +1,8 @@
 package Recursion;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Substring {
@@ -13,6 +15,7 @@ public class Substring {
 
     private static void findSubstrin(String s,int left, int right,List<Character> list) {
 
+
         if (left>=right){
             System.out.println(list);
             return;
@@ -23,4 +26,5 @@ public class Substring {
         list.remove(obj);
         findSubstrin(s,left+1,right,list);
     }
+
 }

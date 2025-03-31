@@ -21,5 +21,12 @@ public class DuplicateNumbers {
         List<Integer> duplicateNumbers=list.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting())).entrySet().stream()
                 .filter(num->num.getValue()>1).map(Map.Entry::getKey).toList();
         System.out.println(duplicateNumbers);
+
+        List<Integer> numbers=list.stream().distinct().toList();
+        System.out.println(numbers);
+
+        List<Integer> duplicateNumber3=list.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))
+                .entrySet().stream().filter(num->num.getValue()>1).map(Map.Entry::getKey).toList();
+        System.out.println(duplicateNumber3);
     }
 }

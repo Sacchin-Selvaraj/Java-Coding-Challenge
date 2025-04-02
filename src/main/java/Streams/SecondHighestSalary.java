@@ -13,7 +13,7 @@ public class SecondHighestSalary {
                 new Employee("Charles",39,"Architect",95000.00,2,true,"Germany","female"),
                 new Employee("Scott",28,"Coding team",55000.00,2,false,"California","male"),
                 new Employee("Pineda",45,"Team lead",75000.00,2,true,"Canada","female"),
-                new Employee("Morgon",29,"HR",65000.00,2,false,"Chennai","female")
+                new Employee("Morgon",29,"HR",95000.00,2,false,"Chennai","female")
         );
 
         List<Employee> employee=employeeList.stream().filter(employee1 -> employee1.name.startsWith("A")).toList();
@@ -40,6 +40,7 @@ public class SecondHighestSalary {
         System.out.println("group"+group);
 
         group.forEach((s, employees) -> System.out.println(s+" - "+employees));
+
 
     }
 }

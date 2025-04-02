@@ -18,5 +18,8 @@ public class ListOfStringsByLength {
 
         Map<String,Integer> stringsByLength=stringList.stream().collect(Collectors.toMap(Function.identity(),String::length));
         System.out.println(stringsByLength);
+
+        List<Integer> length=stringList.stream().mapToInt(String::length).boxed().toList();
+        System.out.println(length);
     }
 }

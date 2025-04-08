@@ -10,7 +10,7 @@ public class ListOfStringsByLength {
 
     public static void main(String[] args) {
 
-        List<String> stringList= Arrays.asList("apple", "banana","cherry", "date", "fig", "orange","mango","melon","grape");
+        List<String> stringList= Arrays.asList("apple","banana","cherry","date","fig","orange","mango","melon","grape");
 
         Map<Integer,List<String>> fruitsByLength = stringList.stream().collect(Collectors.groupingBy(String::length));
 
@@ -21,5 +21,6 @@ public class ListOfStringsByLength {
 
         List<Integer> length=stringList.stream().mapToInt(String::length).boxed().toList();
         System.out.println(length);
+
     }
 }

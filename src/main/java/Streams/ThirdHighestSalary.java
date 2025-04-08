@@ -24,6 +24,8 @@ public class ThirdHighestSalary {
         List<Employee> secondHighestSalary=employeeList.stream().filter(employee -> employee.getSalary()==max).toList();
         System.out.println(secondHighestSalary);
 
+        List<Employee> sortedBySalary=employeeList.stream().sorted(Comparator.comparingDouble(Employee::getSalary).reversed()).toList();
+        System.out.println(sortedBySalary);
 
     }
 }

@@ -20,5 +20,9 @@ public class FrequencyOfStrings {
 
         List<String> sortByLength=stringList.stream().sorted(Comparator.comparing(String::length)).toList();
         System.out.println(sortByLength);
+
+        String word= stringList.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).toString();
+        System.out.println(word);
     }
 }

@@ -27,7 +27,6 @@ public class CountFrequency {
 //            }
 //        }
 //        return stringBuilder.toString();
-
         if (str.isEmpty()) return ""; // Edge case
 
         StringBuilder stringBuilder = new StringBuilder();

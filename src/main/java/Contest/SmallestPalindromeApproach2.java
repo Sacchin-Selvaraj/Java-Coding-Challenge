@@ -1,13 +1,15 @@
 package Contest;
 
-import java.util.TreeSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SmallestPalindromeApproach2 {
     public static String smallestPalindrome(String s,int k) {
         if (s.length()==1)
             return s;
-        TreeSet<String> set=new TreeSet<>();
+        List<String> set=new ArrayList<>();
         findPermutation(s.toCharArray(),0,set);
+        System.out.println(set);
         int count=0;
         for (String st:set){
             if(checkPalindromes(st))
@@ -19,7 +21,7 @@ public class SmallestPalindromeApproach2 {
         return "";
     }
 
-    private static void findPermutation(char[] arr, int currentIndex, TreeSet<String> result) {
+    private static void findPermutation(char[] arr, int currentIndex, List<String> result) {
         if (currentIndex == arr.length - 1) {
             result.add(new String(arr));
             return;
@@ -52,7 +54,7 @@ public class SmallestPalindromeApproach2 {
         return true;
     }
     public static void main(String[] args) {
-        String str="aa";
+        String str="abc";
         System.out.println(smallestPalindrome(str,2));
 
     }

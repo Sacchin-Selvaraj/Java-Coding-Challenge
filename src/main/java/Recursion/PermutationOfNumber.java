@@ -14,7 +14,6 @@ public class PermutationOfNumber {
         permutate(list,0,num);
         return list;
     }
-
     private static void permutate(List<List<Integer>> list, int currentIdx, int[] num) {
         if (currentIdx==num.length-1){
             List<Integer> list1=new ArrayList<>();

@@ -3,16 +3,20 @@ package Contest;
 import java.util.TreeSet;
 
 public class SmallestPalindromeApproach2 {
-    public static String smallestPalindrome(String s) {
+    public static String smallestPalindrome(String s,int k) {
         if (s.length()==1)
             return s;
         TreeSet<String> set=new TreeSet<>();
         findPermutation(s.toCharArray(),0,set);
+        int count=0;
         for (String st:set){
             if(checkPalindromes(st))
+                count++;
+            if (count==k) {
                 return st;
+            }
         }
-        return s;
+        return "";
     }
 
     private static void findPermutation(char[] arr, int currentIndex, TreeSet<String> result) {
@@ -47,10 +51,9 @@ public class SmallestPalindromeApproach2 {
         }
         return true;
     }
-
     public static void main(String[] args) {
-        String str="aba";
-        System.out.println(smallestPalindrome(str));
+        String str="aa";
+        System.out.println(smallestPalindrome(str,2));
 
     }
 }

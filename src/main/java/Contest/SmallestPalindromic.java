@@ -48,10 +48,14 @@ public class SmallestPalindromic {
             }
         }
         Arrays.sort(ch);
+        System.out.println(ch);
         int count=0;
+        boolean flag=true;
         for (int i = ch.length-1; i >= 0; i--) {
-            if (ch[i]==temp)
+            if (ch[i]==temp&&flag) {
+                flag = false;
                 continue;
+            }
             if (count%2==0){
                 deque.addFirst(ch[i]);
                 count++;

@@ -24,7 +24,7 @@ public class IntersectionofTwoArrays {
     public static boolean binarySearch(int k,int[] nums2){
         int start=0;
         int mid=0;
-        int end= nums2.length-1;
+        int end = nums2.length-1;
         while(start<=end){
              mid=start+(end-start)/2;
             if(nums2[mid]==k){

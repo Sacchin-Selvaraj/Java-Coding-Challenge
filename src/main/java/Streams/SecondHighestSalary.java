@@ -41,6 +41,9 @@ public class SecondHighestSalary {
 
         group.forEach((s, employees) -> System.out.println(s+" - "+employees));
 
+        Double salary= employeeList.stream().max(Comparator.comparing(Employee::getSalary)).get().salary;
+        System.out.println(salary);
+
 
     }
 }

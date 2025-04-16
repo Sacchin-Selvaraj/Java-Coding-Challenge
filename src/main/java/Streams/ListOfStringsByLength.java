@@ -1,6 +1,7 @@
 package Streams;
 
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -22,5 +23,7 @@ public class ListOfStringsByLength {
         List<Integer> length=stringList.stream().mapToInt(String::length).boxed().toList();
         System.out.println(length);
 
+        Map<String,List<String>> stringLongMap=stringList.stream().collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new,Collectors.toList()));
+        System.out.println(stringLongMap);
     }
 }

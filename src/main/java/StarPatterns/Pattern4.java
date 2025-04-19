@@ -2,12 +2,10 @@ package StarPatterns;
 
 public class Pattern4 {
     public static void main(String[] args) {
-
         int n = 5;
         print2(n);
         print1(n);
     }
-
     private static void print1(int n) {
         int space = 2;
         for (int i = 1; i < n; i++) {
@@ -39,6 +37,5 @@ public class Pattern4 {
             System.out.println(" ");
             space -= 2;
         }
-
     }
 }

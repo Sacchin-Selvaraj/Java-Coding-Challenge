@@ -3,6 +3,7 @@ package Scalar;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class LargestNumber {
 
@@ -14,6 +15,9 @@ public class LargestNumber {
             str.add(String.valueOf(num));
         }
         Collections.sort(str,(a, b) -> (b+a).compareTo(a+b));
+
+        if (Objects.equals(str.get(0), "0"))
+            return "0";
 
         for (String s:str){
             stringBuilder.append(s);

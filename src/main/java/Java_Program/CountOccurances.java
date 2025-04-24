@@ -2,6 +2,7 @@ package Java_Program;
 
 import java.util.HashSet;
 import java.util.Hashtable;
+import java.util.Map;
 
 public class CountOccurances {
 

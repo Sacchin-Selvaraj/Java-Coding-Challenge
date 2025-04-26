@@ -1,36 +1,43 @@
 package Arrays;
 
-import java.util.Arrays;
 
 public class SpiralMatrix {
     public static void main(String[] args) {
-        int n=6;
-        System.out.println(Arrays.deepToString(findSpiralMatrix(n)));
+        int n = 6;
+        findSpiralMatrix(n);
     }
 
-    private static int[][] findSpiralMatrix(int n) {
-        int [][] ans=new int[n][n];
-        int num=0;
-        int left=0,right=n,top=0,bottom=n;
-        for (int i = 0; i < n; i++) {
-            for (int j = left; j < right ; j++) {
-                ans[top][j]=num++;
+    private static void findSpiralMatrix(int n) {
+        int[][] ans = new int[n][n];
+        int num = 1;
+        int left = 0, right = n - 1, top = 0, bottom = n - 1;
+        while (top <= bottom && left <= right) {
+            for (int j = left; j <= right; j++) {
+                ans[top][j] = num++;
             }
             top++;
-            right--;
-            for (int j = top; j < bottom ; j++) {
-                ans[right][j]=num++;
+            for (int j = top; j <= bottom; j++) {
+                ans[j][right] = num++;
             }
             right--;
-            bottom--;
-            for (int j = right; j >= left ; j--) {
-                ans[bottom][j]=num++;
+            if (top<=bottom) {
+                for (int j = right; j >= left; j--) {
+                    ans[bottom][j] = num++;
+                }
+                bottom--;
             }
-            bottom++;
-            for (int j = bottom; j >=top ; j--) {
-                ans[left][j]=num++;
+            if (left<=right){
+            for (int j = bottom; j >= top; j--) {
+                ans[j][left] = num++;
+            }
+            left++;
             }
         }
-        return ans;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(ans[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }

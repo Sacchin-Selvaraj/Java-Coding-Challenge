@@ -9,7 +9,6 @@ public class NumberOfSubArraysWithXor {
         int num=6;
         System.out.println(findSubarrays(nums,num));
     }
-
     private static int findSubarrays(int[] nums, int num) {
         HashMap<Integer,Integer> map=new HashMap<>();
         map.put(0,1);

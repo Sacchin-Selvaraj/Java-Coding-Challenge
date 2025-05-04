@@ -20,7 +20,7 @@ public class pickFromBothSides {
 
         int ans=Math.max(prefixSum[B-1],suffixSum[len-B]);
         for (int i = 1; i < B; i++) {
-            int sum = prefixSum[i-1]+suffixSum[len-(B-i)];
+            int sum = prefixSum[i-1]+suffixSum[len-B];
             ans=Math.max(ans,sum);
         }
         return ans;

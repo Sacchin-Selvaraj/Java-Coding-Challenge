@@ -1,7 +1,6 @@
 package Recursion;
 
 public class MColouring {
-
     public static void main(String[] args) {
         int N=4;
         int M=3;
@@ -13,7 +12,6 @@ public class MColouring {
             System.out.println("0");
         }
     }
-
     private static boolean findMcolours(int idx,int n, int m, int e, int[] colour) {
         if (idx==n){
             return true;

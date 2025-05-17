@@ -9,9 +9,7 @@ public class KokoBananas {
         int bananas = minEatingSpeed( piles, h);
         System.out.println(bananas);
     }
-
     public static int minEatingSpeed(int[] piles, int h) {
-
         int low = 0;
         int high = findMax(piles);
         while (low <= high) {
@@ -25,7 +23,6 @@ public class KokoBananas {
         }
         return low;
     }
-
     public static int findMax(int[] piles) {
         int max=-1;
         for (int i = 0; i < piles.length; i++) {
@@ -34,7 +31,6 @@ public class KokoBananas {
         }
         return max;
     }
-
     private static int findHour(int[] piles, int mid, int h) {
 
         int totalHrs=0;

@@ -37,7 +37,6 @@ public class MinimumBouquets {
         }
         return ans>=m;
     }
-
     public static void main(String[] args) {
 
         int[] bloomDay={1000000000,1000000000};

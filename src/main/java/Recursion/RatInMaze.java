@@ -9,15 +9,17 @@ public class RatInMaze {
 
         int[][] maze = {
                 {1, 0, 0, 0},
+                {1, 0, 0, 0},
                 {1, 1, 1, 1},
-                {1, 1, 0, 1},
-                {0, 1, 1, 1}
+                {1, 0, 1, 1}
         };
         int[][] mark = new int[maze.length][maze[0].length];
         List<List<String>> res = new ArrayList<>();
         List<String> path = new ArrayList<>();
         findthePath(res, path, maze, mark, 0, 0);
-        System.out.println(res);
+        for (List<String> list:res){
+            System.out.println(list);
+        }
     }
 
     private static void findthePath(List<List<String>> res, List<String> path, int[][] maze, int[][] mark, int i, int j) {

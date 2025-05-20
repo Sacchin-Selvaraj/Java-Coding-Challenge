@@ -31,7 +31,5 @@ public class LargestNumber {
         List<Integer> list3=Stream.iterate(0,integer -> integer+2).limit(10).toList();
         System.out.println(list3);
 
-
-
     }
 }

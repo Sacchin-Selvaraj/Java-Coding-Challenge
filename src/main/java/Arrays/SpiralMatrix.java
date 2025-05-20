@@ -2,8 +2,9 @@ package Arrays;
 
 
 public class SpiralMatrix {
+
     public static void main(String[] args) {
-        int n = 6;
+        int n = 10;
         findSpiralMatrix(n);
     }
 

@@ -1,6 +1,7 @@
 package CommonQuestions;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Stack;
 
 public class ReverseStrings {
@@ -36,6 +37,9 @@ public class ReverseStrings {
         for (char c:arr){
             char ch =strs.pop();
             System.out.print(ch);
+
         }
+        HashSet<Character> set=new HashSet<>();
+
     }
 }

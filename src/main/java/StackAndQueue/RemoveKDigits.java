@@ -14,12 +14,14 @@ public class RemoveKDigits {
         Stack<Integer> st=new Stack<>();
         int count=0;
         for (int i = 0; i < s.length(); i++) {
-            while (( count!=k &&!st.isEmpty()) && st.peek()>=s.charAt(i)-48){
+            while (( k>0 &&!st.isEmpty()) && st.peek()>=s.charAt(i)-'0'){
                 st.pop();
-                count++;
+                k--;
             }
-            st.push( s.charAt(i)-48);
+            st.push( s.charAt(i)-'0');
         }
+
+        // need to write edge cases
        return st;
     }
 }

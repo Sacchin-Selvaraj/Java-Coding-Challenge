@@ -28,7 +28,6 @@ public class TicTacToc {
         System.out.println("Game Draw...");
         sc.close();
     }
-
     private static void isWinnerAvailable(char[][] board) {
         if (checkRow(board)||checkColumn(board)||checkDiagonal(board)){
             System.out.println("Player "+board[row][col]+" is the Winner...");

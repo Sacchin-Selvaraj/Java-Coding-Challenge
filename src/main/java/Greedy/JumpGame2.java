@@ -12,7 +12,6 @@ public class JumpGame2 {
             return 0;
         }
         int minJumps = Integer.MAX_VALUE;
-
         for (int j = 1; j <= nums[idx]; j++) {
             int nextIdx = idx + j;
             if (nextIdx < nums.length) {
@@ -28,8 +27,8 @@ public class JumpGame2 {
 
     public static void main(String[] args) {
         int[] nums = {2, 3, 1, 1, 4};
-        //System.out.println(jumps(nums));
-        System.out.println(jump(nums));
+        System.out.println(jumps(nums));
+        //System.out.println(jump(nums));
     }
 
     public static int jump(int[] nums) {
@@ -38,7 +37,7 @@ public class JumpGame2 {
         while (right < nums.length - 1) {
             int farthest = 0;
             for (int i = left; i <= right; i++) {
-                farthest=Math.max(farthest,i+nums[i]);
+                farthest = Math.max(farthest, i + nums[i]);
             }
             left = right + 1;
             right = farthest;

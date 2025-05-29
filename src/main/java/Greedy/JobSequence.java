@@ -8,7 +8,6 @@ public class JobSequence {
 
         Arrays.sort(jobs,(o1, o2) ->
                 o2[2]-o1[2]);
-
         int max=Integer.MIN_VALUE;
         for (int i = 0; i < jobs.length; i++) {
             max=Math.max(max,jobs[i][1]);

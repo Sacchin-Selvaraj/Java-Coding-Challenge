@@ -1,6 +1,7 @@
 package Greedy;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MinimumNumberOfPlatforms {
@@ -37,7 +38,23 @@ public class MinimumNumberOfPlatforms {
     }
 
     private static int findPlatformOptimal(int[] arrival, int[] departure) {
-        return 0;
+        Arrays.sort(arrival);
+        Arrays.sort(departure);
+        int i=0,j=0;
+        int n=arrival.length;
+        int count=0,maxPlatform=0;
+        while (i<n){
+            if (arrival[i]<departure[j]){
+                count++;
+                i++;
+            }else {
+                count--;
+                j++;
+            }
+            maxPlatform=Math.max(maxPlatform,count);
+        }
+
+        return maxPlatform;
     }
 
 }

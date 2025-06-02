@@ -12,7 +12,6 @@ public class AssignCookies {
     }
 
     private static int findCookies(int[] greed, int[] child) {
-
         Arrays.sort(greed);
         Arrays.sort(child);
         int left = 0,right=0;

@@ -6,16 +6,16 @@ public class CountSubStringsWithKFrequency {
     public static int numberOfSubstrings(String s, int k) {
         int len=s.length();
         int left=0,right=0,substringCount=0;
-
+        HashMap<Character,Integer> map=new HashMap<>();
         while (right<s.length()){
-            boolean flag=false;
-            if (isValidSubstring(s,k,left,right)){
+            char ch=s.charAt(right);
+            map.put(ch,map.getOrDefault(ch,0)+1);
+            while (map.get(ch)>=k){
                 substringCount+=len-right;
+                map.put(s.charAt(left),map.get(s.charAt(left))-1);
                 left++;
-                flag=true;
             }
-            if (!flag)
-                right++;
+            right++;
         }
         return substringCount;
     }
@@ -32,8 +32,8 @@ public class CountSubStringsWithKFrequency {
     }
 
     public static void main(String[] args) {
-        String s="abcde";
-        int k=1;
+        String s="ajsrhoebe";
+        int k=2;
         System.out.println(numberOfSubstrings(s,k));
     }
 }

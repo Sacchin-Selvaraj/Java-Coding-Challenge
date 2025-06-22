@@ -29,7 +29,6 @@ public class HasPrime {
         }
         return true;
     }
-
     public static void main(String[] args) {
         int[] nums={3,0,3,6,3,3};
         System.out.println(checkPrimeFrequency(nums));

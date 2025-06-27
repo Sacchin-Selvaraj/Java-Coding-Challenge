@@ -15,12 +15,12 @@ public class MaximumNoOf1s {
 
     private static int countNumberOfMaximumRows(int[][] arr) {
         int idx=-1;
-        int maxCount=-1;
+        int maxCount=0;
         int n=arr.length;
         int m=arr[0].length;
         for (int i = 0; i < n; i++) {
             int count=maximum1s(arr[i],m);
-            if (count>maxCount){
+            if (count>=maxCount){
                 maxCount=count;
                 idx=i;
             }

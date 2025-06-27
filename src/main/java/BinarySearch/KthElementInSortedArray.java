@@ -8,7 +8,6 @@ public class KthElementInSortedArray {
         int k=3;
         System.out.println(findKthElement(num1,num2,k));
     }
-
     private static int findKthElement(int[] num1, int[] num2, int k) {
         int n1=num1.length;
         int n2=num2.length;

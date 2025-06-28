@@ -9,7 +9,7 @@ public class Search2DMatrix_1 {
                 {7,9,10,11},
                 {13,14,16,18}
         };
-        int target=17;
+        int target=1;
         System.out.println(search2DMatrix(arr,target));
     }
 
@@ -19,8 +19,10 @@ public class Search2DMatrix_1 {
             int mid=(left+right)/2;
             int row=mid/arr[0].length;
             int col=mid%arr[0].length;
-            if (arr[row][col]==target)
+            if (arr[row][col]==target) {
+                System.out.println("Row "+row+" Col "+col);
                 return true;
+            }
             else if (arr[row][col]<target) {
                 left=mid+1;
             }else

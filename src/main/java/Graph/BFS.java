@@ -19,6 +19,7 @@ public class BFS {
         list.get(2).add(4);
         list.get(6).add(7);
         list.get(6).add(8);
+        list.get(6).add(1);
         list.get(4).add(5);
         list.get(7).add(5);
 

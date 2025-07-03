@@ -41,10 +41,32 @@ public class NumberofProvinces {
 
     public static void main(String[] args) {
         int[][] connected={
-                {1,0,0},
+                {1,1,0},
                 {0,1,0},
                 {0,0,1}
         };
         System.out.println(findCircleNum(connected));
+        System.out.println(findCircleNumMatrix(connected));
+    }
+
+    private static int findCircleNumMatrix(int[][] connected) {
+        int provinces=0;
+        boolean[] visited=new boolean[connected.length];
+        for (int i = 0; i < connected.length; i++) {
+            if (!visited[i]){
+                provinces++;
+                dfsMatrix(connected,visited,i);
+            }
+        }
+        return provinces;
+    }
+
+    private static void dfsMatrix(int[][] connected, boolean[] visited, int node) {
+        visited[node]=true;
+        for (int i = 0; i < connected.length; i++) {
+            if (connected[node][i]==1 & !visited[i]){
+                dfsMatrix(connected,visited,i);
+            }
+        }
     }
 }

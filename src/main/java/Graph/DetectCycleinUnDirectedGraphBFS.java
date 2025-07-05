@@ -7,11 +7,19 @@ import java.util.Queue;
 
 public class DetectCycleinUnDirectedGraphBFS {
 
-    private static boolean detectCycleBFS(List<List<Integer>> list, int nodes) {
-
-        Queue<int[]> queue=new ArrayDeque<>();
+    private static boolean detectCycle(List<List<Integer>> list, int nodes) {
         boolean[] vis =new  boolean[nodes+1];
-        queue.add(new int[]{1,0});
+        for (int i = 1; i <= nodes; i++) {
+            if (!vis[i]){
+                if (detectCycleBFS(list,nodes,vis,i))return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean detectCycleBFS(List<List<Integer>> list, int nodes,boolean[] vis,int src) {
+        Queue<int[]> queue=new ArrayDeque<>();
+        queue.add(new int[]{src,0});
         while (!queue.isEmpty()){
             int[] pair=queue.poll();
             vis[pair[0]]=true;
@@ -49,6 +57,7 @@ public class DetectCycleinUnDirectedGraphBFS {
         list.get(6).add(7);
         list.get(7).add(5);
         list.get(7).add(6);
-        System.out.println(detectCycleBFS(list,nodes));
+        System.out.println(detectCycle(list,nodes));
     }
+
 }

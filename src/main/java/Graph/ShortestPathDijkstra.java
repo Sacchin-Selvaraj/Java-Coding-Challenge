@@ -6,7 +6,6 @@ import java.util.PriorityQueue;
 import java.util.Stack;
 
 public class ShortestPathDijkstra {
-
     private static Stack<Integer> findShortestDistanceBfs(int nodes, int[][] edges, int srcNode, int dest) {
         ArrayList<ArrayList<DistancePair>> adjList=constructAdjList(edges,nodes);
         int[] distance=new int[nodes+1];

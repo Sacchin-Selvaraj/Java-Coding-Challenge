@@ -45,12 +45,12 @@ public class DijkstraPriorityQueue {
         for (int i = 0; i < nodes; i++) {
             adjList.add(new ArrayList<>());
         }
-
-        for (int[] value :edges){
-            int distance=value[2];
-            int node=value[1];
-            int i=value[0];
-            adjList.get(i).add(new DistancePair(distance,node));
+        for (int[] edge : edges) {
+            int u = edge[0];  // Source node
+            int v = edge[1];  // Destination node
+            int wt = edge[2];  // Weight
+            adjList.get(u).add(new DistancePair(wt, v));
+            adjList.get(v).add(new DistancePair(wt, u));  // Add reverse edge for undirected graphs
         }
         return adjList;
     }

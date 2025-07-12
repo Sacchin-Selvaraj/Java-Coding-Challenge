@@ -29,13 +29,13 @@ public class ShortestPathInMaze {
         Queue<Maze> queue=new ArrayDeque<>();
         queue.add(new Maze(0,source[0],source[1]));
 
+        int[] rowDirections={-1,0,1,0};
+        int[] colDirections={0,1,0,-1};
         while (!queue.isEmpty()){
             Maze pair=queue.poll();
             int dist=pair.distance;
             int row=pair.row;
             int col=pair.col;
-            int[] rowDirections={-1,0,1,0};
-            int[] colDirections={0,1,0,-1};
             for (int i = 0; i < 4; i++) {
                 int nx=row+rowDirections[i];
                 int ny=col+colDirections[i];
@@ -50,7 +50,6 @@ public class ShortestPathInMaze {
         }
         return -1;
     }
-
     public static void main(String[] args) {
         int[][] maze={
                 {1,1,1,1},

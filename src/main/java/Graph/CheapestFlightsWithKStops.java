@@ -37,17 +37,16 @@ public class CheapestFlightsWithKStops {
         int[] ticketCost=new int[cities];
         Arrays.fill(ticketCost,(int) 1e9);
         ticketCost[src]=0;
-        PriorityQueue<FlightDetails> queue=new PriorityQueue<>((a, b) ->a.cost-b.cost );
-        queue.add(new FlightDetails(src,-1,0));
+        PriorityQueue<FlightDetails> queue=new PriorityQueue<>((a, b) ->a.stops-b.stops );
+        queue.add(new FlightDetails(src,0,0));
 
         while (!queue.isEmpty()){
             FlightDetails flightDetails=queue.poll();
             int city=flightDetails.nextCity;
             int steps=flightDetails.stops;
             int cost=flightDetails.cost;
-            if (city==dst && steps<=k){
-                return cost;
-            }
+           if (steps>k)
+               continue;
             for (Flight details:adjLst.get(city)){
                 int nextCity=details.destination;
                 int price=details.cost;
@@ -57,9 +56,9 @@ public class CheapestFlightsWithKStops {
                 }
             }
         }
-        return 0;
+        if (ticketCost[dst]==1e9) return -1;
+        return ticketCost[dst];
     }
-
     public static void main(String[] args) {
         int cities=4;
         int[][] flights={
@@ -69,9 +68,9 @@ public class CheapestFlightsWithKStops {
                 {1,3,600},
                 {2,3,200}
         };
-        int src=1;
-        int dest=3;
-        int k=3;
-        System.out.println(getCheapestFlight(cities,flights,src,dest,k));
+        int src=0;
+        int dst=3;
+        int k=1;
+        System.out.println(getCheapestFlight(cities,flights,src,dst,k));
     }
 }

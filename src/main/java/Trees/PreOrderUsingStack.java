@@ -46,6 +46,22 @@ class PreOrder{
         return list;
     }
 
+    public List<Integer> InorderStack(Node node){
+        List<Integer> list=new ArrayList<>();
+        if (node==null) return list;
+        Stack<Node> stack=new Stack<>();
+
+        while ( root!=null || !stack.isEmpty()){
+           while (root!=null){
+               stack.push(root);
+               root=root.left;
+           }
+           root=stack.pop();
+           list.add(root.val);
+           root=root.right;
+        }
+        return list;
+    }
 }
 public class PreOrderUsingStack {
 

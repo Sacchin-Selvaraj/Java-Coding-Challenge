@@ -1,8 +1,7 @@
 package Trees;
 
 
-import java.util.ArrayDeque;
-import java.util.Queue;
+import java.util.*;
 
 class TreeNode{
     int val;
@@ -11,6 +10,15 @@ class TreeNode{
 
     public TreeNode(int val) {
         this.val = val;
+    }
+}
+class TreeNodes{
+    TreeNode node;
+    int line;
+
+    public TreeNodes(TreeNode node, int line) {
+        this.node = node;
+        this.line = line;
     }
 }
 
@@ -53,12 +61,35 @@ public class BinaryTree {
 
     public static void main(String[] args) {
         BinaryTree tree=new BinaryTree();
-        Integer[] nums={1,2,null,3,null,4,null,5};
+        Integer[] nums={1,2,3,4,5,6,7,null,null,8,9};
         TreeNode rootNode=tree.insertBinaryTree(nums);
         tree.inOrder(rootNode);
         System.out.println("\nMaximum Path Sum : "+tree.maximumPathSum(rootNode));
         System.out.println("Min Depth : "+tree.minDepth(rootNode));
+        System.out.println("Bottom View : ");
+        for (Integer list:findBottomView(rootNode)){
+            System.out.print(" "+list);
+        }
     }
+
+    private static List<Integer> findBottomView(TreeNode rootNode) {
+        Map<Integer,Integer> map=new TreeMap<>();
+        Queue<TreeNodes> queue=new ArrayDeque<>();
+        queue.add(new TreeNodes(rootNode,0));
+        while (!queue.isEmpty()){
+            TreeNodes node=queue.poll();
+            int line=node.line;
+            map.put(line,node.node.val);
+            if (node.node.left!=null){
+                queue.add(new TreeNodes(node.node.left,line-1));
+            }
+            if (node.node.right!=null){
+                queue.add(new TreeNodes(node.node.right,line+1));
+            }
+        }
+        return new ArrayList<>(map.values());
+    }
+
     public int maximumPathSum(TreeNode node){
         if(node==null) return 0;
         int[] max={node.val};

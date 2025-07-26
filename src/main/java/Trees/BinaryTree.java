@@ -1,5 +1,6 @@
 package Trees;
 
+
 import java.util.ArrayDeque;
 import java.util.Queue;
 
@@ -26,27 +27,70 @@ public class BinaryTree {
         TreeNode node=new TreeNode(nums[0]);
         Queue<TreeNode> queue=new ArrayDeque<>();
         queue.add(node);
-        int i=0;
+        int i=1;
         while (!queue.isEmpty() && i<nums.length){
-           node=queue.poll();
-            if (i<nums.length && nums[i]!=null){
-                node.left=new TreeNode(nums[i]);
-                queue.add(node.left);
+           TreeNode current=queue.poll();
+            if (nums[i]!=null){
+                current.left=new TreeNode(nums[i]);
+                queue.add(current.left);
             }
             i++;
             if (i<nums.length && nums[i]!=null){
-                node.right=new TreeNode(nums[i]);
-                queue.add(node.right);
+                current.right=new TreeNode(nums[i]);
+                queue.add(current.right);
             }
             i++;
         }
         return node;
     }
+    public void inOrder(TreeNode node){
+        if (node==null)
+            return;
+        inOrder(node.left);
+        System.out.print(node.val+" ");
+        inOrder(node.right);
+    }
 
     public static void main(String[] args) {
         BinaryTree tree=new BinaryTree();
-        Integer[] nums={-10,9,20,null,null,15,7};
+        Integer[] nums={1,2,null,3,null,4,null,5};
         TreeNode rootNode=tree.insertBinaryTree(nums);
+        tree.inOrder(rootNode);
+        System.out.println("\nMaximum Path Sum : "+tree.maximumPathSum(rootNode));
+        System.out.println("Min Depth : "+tree.minDepth(rootNode));
+    }
+    public int maximumPathSum(TreeNode node){
+        if(node==null) return 0;
+        int[] max={node.val};
+        findMaximumPathSum(node,max);
+        return max[0];
+    }
 
+    private int findMaximumPathSum(TreeNode node, int[] max) {
+        if (node==null)
+            return 0;
+        int left=Math.max(findMaximumPathSum(node.left,max),0);
+        int right=Math.max(findMaximumPathSum(node.right,max),0);
+        max[0]=Math.max(max[0],node.val+(left+right));
+        return Math.max(left,right)+node.val;
+    }
+
+    public int minDepth(TreeNode root) {
+        int[] min=new int[1];
+        min[0]=Integer.MAX_VALUE;
+        int depth=1;
+        findMinDepth(root,min,depth);
+        return min[0]==Integer.MAX_VALUE?0:min[0];
+    }
+
+    private void findMinDepth(TreeNode root, int[] min, int depth) {
+        if (root==null){
+            return;
+        }
+        if (root.left==null && root.right==null){
+            min[0]=Math.min(min[0],depth);
+        }
+        findMinDepth(root.left,min,depth+1);
+        findMinDepth(root.right,min,depth+1);
     }
 }

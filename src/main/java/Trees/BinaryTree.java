@@ -70,6 +70,10 @@ public class BinaryTree {
         for (Integer list:findBottomView(rootNode)){
             System.out.print(" "+list);
         }
+        System.out.println("\nRight View : ");
+        for (Integer list:rightSideView(rootNode)){
+            System.out.print(" "+list);
+        }
     }
 
     private static List<Integer> findBottomView(TreeNode rootNode) {
@@ -123,5 +127,27 @@ public class BinaryTree {
         }
         findMinDepth(root.left,min,depth+1);
         findMinDepth(root.right,min,depth+1);
+    }
+
+    public static List<Integer> rightSideView(TreeNode root) {
+        List<Integer> list=new ArrayList<>();
+        Queue<TreeNode> queue=new ArrayDeque<>();
+        if (root==null)
+            return list;
+        queue.add(root);
+        while (!queue.isEmpty()){
+            int size= queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node=queue.poll();
+                if (i==0) list.add(node.val);
+                if (node.right!=null){
+                    queue.add(node.right);
+                }
+                if (node.left!=null){
+                    queue.add(node.left);
+                }
+            }
+        }
+        return list;
     }
 }

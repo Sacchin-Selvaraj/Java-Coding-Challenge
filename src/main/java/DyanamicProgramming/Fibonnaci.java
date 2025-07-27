@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Fibonnaci {
 
     public static void main(String[] args) {
-        int num=29;
+        int num=5;
         int[] dp=new int[num+1];
         Arrays.fill(dp,-1);
         System.out.println(findFibonnaci(num,dp));

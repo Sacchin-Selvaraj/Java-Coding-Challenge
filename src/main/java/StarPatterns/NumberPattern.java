@@ -32,4 +32,5 @@ public class NumberPattern {
             System.out.println(Arrays.toString(grid));
         }
     }
+
 }

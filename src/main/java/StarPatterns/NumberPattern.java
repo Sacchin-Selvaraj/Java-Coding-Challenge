@@ -1,6 +1,7 @@
 package StarPatterns;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 public class NumberPattern {
 
@@ -31,6 +32,9 @@ public class NumberPattern {
         for (int[] grid:matrix){
             System.out.println(Arrays.toString(grid));
         }
+        Stack<Integer> st=new Stack<>();
+        st.push(10);
+        st.isEmpty();
     }
 
 }

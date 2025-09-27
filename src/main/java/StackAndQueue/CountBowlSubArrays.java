@@ -6,9 +6,9 @@ public class CountBowlSubArrays {
 
     public static void main(String[] args) {
         int[] nums={5,1,2,3,4};
-        System.out.println(bowlSubarrays(nums));
+        System.out.println(bowlSubArrays(nums));
     }
-    public static long bowlSubarrays(int[] A) {
+    public static long bowlSubArrays(int[] A) {
         long res = 0;
         Stack<Integer> s = new Stack<>();
         for (int r = 0; r < A.length; ++r) {

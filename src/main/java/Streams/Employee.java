@@ -1,5 +1,7 @@
 package Streams;
 
+import java.util.List;
+
 public class Employee {
 
     public String name;
@@ -20,6 +22,23 @@ public class Employee {
         this.leave_balance = leave_balance;
         this.location = location;
         this.gender = gender;
+    }
+
+    public Employee() {
+    }
+
+    public List<Employee> getEmployees(){
+        return List.of(new Employee("Sacchin",24,"Software Engineer", 70000,3,false,"chennai","male"),
+                new Employee("Ramesh",45,"Mechanical Engineer", 40000,3,false,"coimbatore","male"),
+                new Employee("Suresh",34,"Mechanical Engineer", 30000,3,false,"coimbatore","male"),
+                new Employee("Sehwag",23,"Design Engineer", 60000,3,false,"chennai","male"),
+                new Employee("Siva",27,"Design Engineer", 63000,3,false,"chennai","male"),
+                new Employee("Rohit",28,"Software Engineer", 80000,3,false,"germany","male"),
+                new Employee("Mani",25,"Game Developer", 46700,3,false,"dindigal","male"),
+                new Employee("Riswanth",29,"Software Engineer", 39000,3,false,"chennai","male"),
+                new Employee("Rohan",24,"Game Developer", 78000,3,false,"chennai","male"),
+                new Employee("Hemanath",31,"Software Engineer", 55000,3,false,"chennai","male")
+        );
     }
 
     public String getGender() {

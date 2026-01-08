@@ -11,12 +11,17 @@ public class EmployeeDepartmentSalary {
        Employee employee = new Employee();
        List<Employee> employeeList = employee.getEmployees();
 
-        Map<String, Employee> employeeMap = employeeList.stream()
-                .collect(Collectors.toMap(Employee::getRole,
-                        Function.identity(),
-                        BinaryOperator.maxBy(Comparator.comparingDouble(Employee::getSalary))));
+        Map<String, List<Employee>> employeeMap = employeeList.stream()
+                .collect(Collectors.groupingBy(Employee::getRole,
+                        Collectors.collectingAndThen(
+                        Collectors.toList(),
+                        list-> list
+                                .stream()
+                                .sorted((o1, o2) -> (int) (o2.salary-o1.salary)).limit(2)
+                                .collect(Collectors.toList())
+                        )
+                        ));
 
-        employeeMap.forEach((a,b)-> System.out.println(a + " --> "+ b.name));
-
+        employeeMap.forEach((a,b)-> System.out.println(a + " --> "+ b));
     }
 }

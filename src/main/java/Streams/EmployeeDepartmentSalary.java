@@ -1,8 +1,6 @@
 package Streams;
 
 import java.util.*;
-import java.util.function.BinaryOperator;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class EmployeeDepartmentSalary {
@@ -23,5 +21,20 @@ public class EmployeeDepartmentSalary {
                         ));
 
         employeeMap.forEach((a,b)-> System.out.println(a + " --> "+ b));
+
+
+        Map<Integer,Employee> employeeMap1 = employeeList.stream()
+                .collect(Collectors.groupingBy(Employee::getAge,
+                        Collectors.collectingAndThen(
+                                Collectors.toList(),
+                                employees3 -> employees3.stream()
+                                        .sorted((o1, o2) -> (int) (o2.salary-o1.salary))
+                                        .limit(1)
+                                        .findFirst().get())
+                        ));
+
+        employeeMap1.forEach(
+                (integer, employee1) -> System.out.println("Age: "+integer+ " Employee: "+employee1)
+        );
     }
 }

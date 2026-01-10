@@ -28,7 +28,7 @@ public class Employee {
     }
 
     public List<Employee> getEmployees(){
-        return List.of(new Employee("Sacchin",24,"Software Engineer", 70000,3,false,"chennai","male"),
+        return List.of(new Employee("Sacchin",24,"Software Engineer", 80000,3,false,"chennai","male"),
                 new Employee("Ramesh",45,"Mechanical Engineer", 40000,3,false,"coimbatore","male"),
                 new Employee("Suresh",34,"Mechanical Engineer", 30000,3,false,"coimbatore","male"),
                 new Employee("Sehwag",23,"Design Engineer", 60000,3,false,"chennai","male"),

@@ -12,8 +12,9 @@ public class Employee {
     public boolean leave_balance;
     public String location;
     public String gender;
+    public List<String> skills;
 
-    public Employee(String name, int age, String role, double salary, int exp, boolean leave_balance, String location, String gender) {
+    public Employee(String name, int age, String role, double salary, int exp, boolean leave_balance, String location, String gender, List<String> skills) {
         this.name = name;
         this.age = age;
         this.role = role;
@@ -22,22 +23,23 @@ public class Employee {
         this.leave_balance = leave_balance;
         this.location = location;
         this.gender = gender;
+        this.skills = skills;
     }
 
     public Employee() {
     }
 
     public List<Employee> getEmployees(){
-        return List.of(new Employee("Sacchin",24,"Software Engineer", 80000,3,false,"chennai","male"),
-                new Employee("Ramesh",45,"Mechanical Engineer", 40000,3,false,"coimbatore","male"),
-                new Employee("Suresh",34,"Mechanical Engineer", 30000,3,false,"coimbatore","male"),
-                new Employee("Sehwag",23,"Design Engineer", 60000,3,false,"chennai","male"),
-                new Employee("Siva",27,"Design Engineer", 63000,3,false,"chennai","male"),
-                new Employee("Rohit",28,"Software Engineer", 80000,3,false,"germany","male"),
-                new Employee("Mani",25,"Game Developer", 46700,3,false,"dindigal","male"),
-                new Employee("Riswanth",29,"Software Engineer", 39000,3,false,"chennai","male"),
-                new Employee("Rohan",24,"Game Developer", 78000,3,false,"chennai","male"),
-                new Employee("Hemanath",31,"Software Engineer", 55000,3,false,"chennai","male")
+        return List.of(new Employee("Sacchin",24,"Software Engineer", 80000,3,false,"chennai","male",List.of("Java","Python","Docker","Kubernetes","Kafka","Git","Maven","Postman","SpringBoot","Spring Security")),
+                new Employee("Ramesh",45,"Mechanical Engineer", 40000,3,false,"coimbatore","male",List.of("Python","Docker")),
+                new Employee("Suresh",34,"Mechanical Engineer", 30000,3,false,"coimbatore","male",List.of("Kubernetes","Kafka")),
+                new Employee("Sehwag",23,"Design Engineer", 60000,3,false,"chennai","male",List.of("Java","Kubernetes","Kafka")),
+                new Employee("Siva",27,"Design Engineer", 63000,3,false,"chennai","male",List.of("Git","Maven","Postman","SpringBoot","Spring Security")),
+                new Employee("Rohit",28,"Software Engineer", 80000,3,false,"germany","male",List.of("Designing")),
+                new Employee("Mani",25,"Game Developer", 46700,3,false,"dindigal","male",List.of("CAD")),
+                new Employee("Riswanth",29,"Software Engineer", 39000,3,false,"chennai","male",List.of("SpringBoot","Spring Security")),
+                new Employee("Rohan",24,"Game Developer", 78000,3,false,"chennai","male",List.of("Java","Python","Kafka","Git","Maven","Spring Security")),
+                new Employee("Hemanath",31,"Software Engineer", 55000,3,false,"chennai","male",List.of("Java","Docker","Kubernetes","Kafka","Git","Maven","Postman","SpringBoot","Spring Security"))
         );
     }
 

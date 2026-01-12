@@ -3,6 +3,8 @@ package Streams;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.toList;
+
 public class EmployeeDepartmentSalary {
 
     public static void main(String[] args) {
@@ -12,11 +14,11 @@ public class EmployeeDepartmentSalary {
         Map<String, List<Employee>> employeeMap = employeeList.stream()
                 .collect(Collectors.groupingBy(Employee::getRole,
                         Collectors.collectingAndThen(
-                        Collectors.toList(),
+                        toList(),
                         list-> list
                                 .stream()
                                 .sorted((o1, o2) -> (int) (o2.salary-o1.salary)).limit(2)
-                                .collect(Collectors.toList())
+                                .collect(toList())
                         )
                         ));
 
@@ -26,7 +28,7 @@ public class EmployeeDepartmentSalary {
         Map<Integer,Employee> employeeMap1 = employeeList.stream()
                 .collect(Collectors.groupingBy(Employee::getAge,
                         Collectors.collectingAndThen(
-                                Collectors.toList(),
+                                toList(),
                                 employees3 -> employees3.stream()
                                         .sorted((o1, o2) -> (int) (o2.salary-o1.salary))
                                         .limit(1)
@@ -36,5 +38,13 @@ public class EmployeeDepartmentSalary {
         employeeMap1.forEach(
                 (integer, employee1) -> System.out.println("Age: "+integer+ " Employee: "+employee1)
         );
+
+        TreeSet<String> treeSet = employeeList.stream()
+                        .flatMap(emp-> emp.skills.stream())
+                        .collect(Collectors.toCollection(TreeSet::new));
+
+      System.out.println("Skills\n");
+      treeSet.forEach(System.out::println);
+
     }
 }

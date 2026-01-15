@@ -1,8 +1,8 @@
 package Java_Program;
 
-import java.util.HashSet;
 import java.util.Hashtable;
-import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Stream;
 
 public class CountOccurances {
 
@@ -25,7 +25,17 @@ public class CountOccurances {
     public static void main(String[] args) {
         String s = "Sacchin";
         System.out.println(areOccurrencesEqual(s));
+        System.out.println();
+        System.out.println("Occurance : "+ occuranceCharacter(s,'c'));
     }
+
+    private static long occuranceCharacter(String s, char a) {
+
+        return s.chars().filter(ch-> ch==a).count();
+
+    }
+
+
 
 
 }

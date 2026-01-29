@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ScoreBoard {
+
     public static void main(String[] args) {
 
         List<users> usersList = List.of(
@@ -15,6 +16,7 @@ public class ScoreBoard {
                 new users(5,1001),
                 new users(6,100),
                 new users(7,10));
+
 
         Map<String,List<users>> listMap = usersList.stream().collect(Collectors.groupingBy(
                 users -> {
@@ -36,7 +38,6 @@ public class ScoreBoard {
         });
     }
 }
-
 
 class users{
     public int id;

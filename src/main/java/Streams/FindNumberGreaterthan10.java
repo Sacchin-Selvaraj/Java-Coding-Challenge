@@ -9,6 +9,7 @@ public class FindNumberGreaterthan10 {
         int[] arr={2,5,10,15,25};
 
         Double average= Arrays.stream(arr).filter(num->num>=10).asDoubleStream().average().getAsDouble();
+
         System.out.println(average);
     }
 }

@@ -11,7 +11,11 @@ public class FindUniqueWords {
 
         List<String> list= Arrays.asList("Java is a Awesome Language","It is an Secure Language");
 
-        Set<String> uniqueWords=list.stream().map(str->str.split("\\s")).flatMap(Arrays::stream).map(String::toLowerCase).collect(Collectors.toSet());
+        Set<String> uniqueWords=list.stream()
+                .map(str->str.split("\\s"))
+                .flatMap(Arrays::stream)
+                .map(String::toLowerCase)
+                .collect(Collectors.toSet());
 
         System.out.println(uniqueWords);
      }

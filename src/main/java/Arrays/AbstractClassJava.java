@@ -8,7 +8,9 @@ public class AbstractClassJava {
         Dog dog = new Dog();
         dog.getName();
 
+        Integer num=4;
 
+        System.out.println(num.byteValue());
 
         System.out.println(dog.getNumber());
     }
@@ -73,6 +75,9 @@ class Dog extends Animal{
             }else{
                 spcChars.push(c);
             }
+
+            Integer num=3;
+            System.out.println(num.byteValue());
         }
         char[] arr=s.toCharArray();
         for(int i=0;i<s.length();i++){

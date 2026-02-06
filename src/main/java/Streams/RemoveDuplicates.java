@@ -19,5 +19,14 @@ public class RemoveDuplicates {
 
         String str3 = str.chars().distinct().mapToObj(value -> String.valueOf((char) value)).collect(Collectors.joining());
         System.out.println(str3);
+
+        int[] num1={3,1,2};
+        int[] num2={5,4,6};
+
+        List<Integer> list=new ArrayList<>();
+
+        int[] sortedArr= Arrays.stream(num1).sorted().toArray();
+
+
     }
 }

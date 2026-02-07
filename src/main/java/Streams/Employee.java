@@ -36,7 +36,7 @@ public class Employee {
                 new Employee("Sehwag",23,"Design Engineer", 60000,3,false,"chennai","male",List.of("Java","Kubernetes","Kafka")),
                 new Employee("Siva",27,"Design Engineer", 63000,3,false,"chennai","male",List.of("Git","Maven","Postman","SpringBoot","Spring Security")),
                 new Employee("Rohit",28,"Software Engineer", 80000,3,false,"germany","male",List.of("Designing")),
-                new Employee("Mani",25,"Game Developer", 46700,3,false,"dindigal","male",List.of("CAD")),
+                new Employee("Mani",25,"Game Developer", 40000,3,false,"dindigal","male",List.of("CAD")),
                 new Employee("Riswanth",29,"Software Engineer", 39000,3,false,"chennai","male",List.of("SpringBoot","Spring Security")),
                 new Employee("Rohan",24,"Game Developer", 78000,3,false,"chennai","male",List.of("Java","Python","Kafka","Git","Maven","Spring Security")),
                 new Employee("Hemanath",31,"Software Engineer", 55000,3,false,"chennai","male",List.of("Java","Docker","Kubernetes","Kafka","Git","Maven","Postman","SpringBoot","Spring Security"))

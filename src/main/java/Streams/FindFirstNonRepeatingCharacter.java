@@ -20,10 +20,15 @@ public class FindFirstNonRepeatingCharacter {
         System.out.println(nonRepeatedCharacter);
 
 
-       Character nonRepeating=str.chars().mapToObj(ch->(char)ch)
-                .collect(Collectors.groupingBy(e->e,LinkedHashMap::new,Collectors.counting())).entrySet()
-                        .stream().filter(characterLongEntry -> characterLongEntry.getValue()==1)
-                        .map(Map.Entry::getKey).findFirst().get();
+       Character nonRepeating=str.chars()
+               .mapToObj(ch->(char)ch)
+               .collect(Collectors.groupingBy(e->e,LinkedHashMap::new,Collectors.counting()))
+               .entrySet()
+               .stream()
+               .filter(characterLongEntry -> characterLongEntry.getValue()==1)
+               .map(Map.Entry::getKey)
+               .findFirst()
+               .get();
 
         System.out.println(nonRepeating);
     }

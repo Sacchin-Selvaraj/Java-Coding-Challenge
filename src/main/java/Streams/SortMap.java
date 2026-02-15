@@ -10,7 +10,7 @@ public class SortMap {
 
         Map<String,Integer> map=Map.of("Sacchin",24,"James",25,"Ashwin",26,"Dhoni",34);
 
-        Map<String,Integer> sortedMap=map.entrySet().stream().sorted((o1, o2) -> o2.getValue()- o1.getValue())
+        Map<String,Integer> sortedMap=map.entrySet().stream().sorted(Map.Entry.comparingByValue())
                 .collect(Collectors.toMap(Map.Entry::getKey,Map.Entry::getValue,(integer, integer2) -> integer, LinkedHashMap::new));
 
         System.out.println(sortedMap);

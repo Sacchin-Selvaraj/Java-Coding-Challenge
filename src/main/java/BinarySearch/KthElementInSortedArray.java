@@ -12,7 +12,9 @@ public class KthElementInSortedArray {
         int n1=num1.length;
         int n2=num2.length;
         if (n1>n2) return findKthElement(num2,num1,k);
+
         int left=Math.max(0,k-n2),right=Math.min(k,n1);
+
         while (left<=right){
             int mid1=(left+right)/2;
             int mid2=k-mid1;

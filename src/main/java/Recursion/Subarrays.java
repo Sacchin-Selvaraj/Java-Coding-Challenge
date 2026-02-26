@@ -12,7 +12,9 @@ public class Subarrays {
         System.out.println(list);
     }
 
-    private static void findSubArray(int[] num, List<List<Integer>> list, List<Integer> tempList, int idx, int length) {
+    private static void findSubArray(int[] num, List<List<Integer>> list,
+                                     List<Integer> tempList,
+                                     int idx, int length) {
 
         if (idx==length){
             list.add(new ArrayList<>(tempList));

@@ -46,7 +46,9 @@ public class DFS {
         return res;
     }
 
-    private static void dfsSearch(ArrayList<ArrayList<Integer>> list, int node, boolean[] vis, ArrayList<Integer> res) {
+    private static void dfsSearch(ArrayList<ArrayList<Integer>> list,
+                                  int node, boolean[] vis,
+                                  ArrayList<Integer> res) {
         vis[node]=true;
         res.add(node);
         for (Integer it:list.get(node)){

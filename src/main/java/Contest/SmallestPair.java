@@ -13,7 +13,9 @@ public class SmallestPair {
             freqMap.put(num,freqMap.getOrDefault(num,0)+1);
             set.add(num);
         }
+        String str="sac";
 
+        
         int a=-1,b=-1;
         int freqA=0,freqB=0;
 

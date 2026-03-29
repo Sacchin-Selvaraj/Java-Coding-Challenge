@@ -1,12 +1,13 @@
 package Contest;
 
+import java.util.Iterator;
 import java.util.PriorityQueue;
 
 public class NonOverlappingSub {
 
     public static void main(String[] args) {
-        int[] arr={3,2,2,4,3};
-        int target=3;
+        int[] arr={2,1,3,3,2,3,1};
+        int target=6;
         System.out.println(minSumOfLengths(arr,target));
     }
 
@@ -17,6 +18,14 @@ public class NonOverlappingSub {
         int sum=0;
 
         PriorityQueue<Integer> queue=new PriorityQueue<>();
+
+        PriorityQueue<int[]> queue1=new PriorityQueue<>((o1, o2) -> o2[1]-o1[1]);
+
+        Iterator<int[]> iterator = queue1.iterator();
+
+        while (iterator.hasNext()){
+            int[] event = iterator.next();
+        }
 
         for(int i=0;i<arr.length;i++){
             sum+=arr[right];
@@ -37,7 +46,7 @@ public class NonOverlappingSub {
 
         }
 
-        if(queue.size()==1) return -1;
+        if(queue.size()==1 || queue.isEmpty()) return -1;
 
         int res=0;
         int n=0;

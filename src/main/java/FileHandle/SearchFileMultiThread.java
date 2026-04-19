@@ -14,7 +14,7 @@ public class SearchFileMultiThread {
         String target = "BooleanPratice.java";
         Instant start = Instant.now();
 
-        ExecutorService service = Executors.newFixedThreadPool(10);
+        ExecutorService service = Executors.newVirtualThreadPerTaskExecutor();
         AtomicInteger activeTasks=new AtomicInteger();
         AtomicBoolean found = new AtomicBoolean(false);
 

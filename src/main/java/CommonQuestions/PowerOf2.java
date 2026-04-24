@@ -12,6 +12,8 @@ public class PowerOf2 {
                 .limit(31)
                 .anyMatch(value -> value==input);
 
+
+
         System.out.println(isPowerOf2);
     }
 }

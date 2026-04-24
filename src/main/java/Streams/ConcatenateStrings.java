@@ -16,8 +16,11 @@ public class ConcatenateStrings {
         Optional<String> string=stringList.stream().reduce((s, s2) -> s.concat(" "+s2));
         System.out.println(string.get());
 
-        Map<String,Long> map=stringList.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+        Map<String,Long> map=stringList.stream()
+                .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
         System.out.println(map);
+
+
 
     }
 }

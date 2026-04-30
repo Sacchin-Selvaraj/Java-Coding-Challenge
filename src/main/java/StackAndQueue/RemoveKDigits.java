@@ -5,8 +5,8 @@ import java.util.Stack;
 public class RemoveKDigits {
 
     public static void main(String[] args) {
-        String s="432219";
-        int k=3;
+        String s="4312219";
+        int k=2;
         System.out.println(afterKDigitsRemoved(s,k));
     }
 

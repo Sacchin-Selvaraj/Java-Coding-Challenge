@@ -17,6 +17,9 @@ public class DuplicateInteger {
                 .map(Map.Entry::getKey)
                 .toList();
 
+        Integer largest = list.stream().max(Comparator.naturalOrder()).orElseGet(() -> 0);
+        System.out.println(largest);
+
         System.out.println(sumMap);
     }
 }

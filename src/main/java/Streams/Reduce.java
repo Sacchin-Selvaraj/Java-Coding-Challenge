@@ -27,5 +27,10 @@ public class Reduce {
 
         System.out.println(factorial);
 
+        Integer sumOfEven = list.stream().filter(n->n%2==0).mapToInt(Integer::intValue).sum();
+
+
+
+
     }
 }

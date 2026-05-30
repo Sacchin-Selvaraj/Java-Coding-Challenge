@@ -2,7 +2,7 @@ package Streams;
 
 import java.util.List;
 
-public class Employee {
+public class Employee{
 
     public String name;
     public int age;
@@ -29,7 +29,7 @@ public class Employee {
     public Employee() {
     }
 
-    public List<Employee> getEmployees(){
+    public static List<Employee> getEmployees(){
         return List.of(new Employee("Sacchin",24,"Software Engineer", 80000,3,false,"chennai","male",List.of("Java","Python","Docker","Kubernetes","Kafka","Git","Maven","Postman","SpringBoot","Spring Security")),
                 new Employee("Ramesh",45,"Mechanical Engineer", 40000,3,false,"coimbatore","male",List.of("Python","Docker")),
                 new Employee("Suresh",34,"Mechanical Engineer", 30000,3,false,"coimbatore","male",List.of("Kubernetes","Kafka")),
@@ -119,4 +119,6 @@ public class Employee {
                 ", location='" + location + '\'' +
                 '}';
     }
+
+
 }

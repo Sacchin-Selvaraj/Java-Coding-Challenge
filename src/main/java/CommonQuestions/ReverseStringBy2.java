@@ -2,7 +2,7 @@ package CommonQuestions;
 
 public class ReverseStringBy2 {
     public static void main(String[] args) {
-        String str = "manikandanv"; // aminakdnna
+        String str = "manikandan"; // aminakdnna
 
         StringBuilder builder = new StringBuilder();
 

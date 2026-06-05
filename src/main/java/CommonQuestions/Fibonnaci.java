@@ -6,7 +6,9 @@ public class Fibonnaci {
     public static void main(String[] args) {
         int first=0;
         int second=1;
+
         int n=20;
+
         System.out.println(first);
          while (n>0){
             System.out.println(second);

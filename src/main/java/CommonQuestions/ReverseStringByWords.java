@@ -1,3 +1,5 @@
+package CommonQuestions;
+
 import java.util.Arrays;
 
 public class ReverseStringByWords {

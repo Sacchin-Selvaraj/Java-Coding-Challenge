@@ -4,7 +4,7 @@ public class InsertionSort {
 // Insertion Sort
     public static void toSort(int[] colour){
 
-        for(int i=1;i< colour.length;i++){
+        for(int i=1;i < colour.length;i++){
             int key=colour[i];
             int j=i-1;
             while(j>=0&&colour[j]>key){

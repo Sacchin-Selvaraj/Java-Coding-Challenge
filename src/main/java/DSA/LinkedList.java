@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 public class LinkedList {
 
-    Node head=null;
+    Node head;
 
-    class Node{
+    static class Node{
+
         int data;
         Node next;
 
@@ -33,7 +34,7 @@ public class LinkedList {
 
     public void addFirst(int data){
 
-        Node newNode=new Node(data);
+        Node newNode= new Node(data);
 
         Node current=head;
         head=newNode;
@@ -68,7 +69,7 @@ public class LinkedList {
 
     private void insertElement(int data,int afterData) {
 
-        Node newNode=new Node(data);
+        Node newNode= new Node(data);
         Node current=head;
         Node temp=null;
 

@@ -14,7 +14,9 @@ public class MergeSort {
     private static void mergeSort(int[] arr, int low, int high) {
         if (low >= high)
             return;
+
         int mid = (low + high) / 2;
+
         mergeSort(arr, low, mid);
         mergeSort(arr, mid + 1, high);
         mergeArray(arr, low, mid, high);
@@ -35,6 +37,7 @@ public class MergeSort {
                 right++;
             }
         }
+
         while (left<=mid){
             temp[k++]=arr[left];
             left++;
@@ -43,6 +46,7 @@ public class MergeSort {
             temp[k++]=arr[right];
             right++;
         }
+
         for (int i = 0; i < temp.length; i++) {
             arr[low + i] = temp[i];
         }

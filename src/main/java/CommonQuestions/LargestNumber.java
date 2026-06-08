@@ -1,28 +1,25 @@
 package CommonQuestions;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class LargestNumber {
     public static void main(String[] args) {
-        int[] nums = {10,2};
+        int[] nums = {0,0};
         System.out.println(largestNumber(nums));
     }
 
     public static String largestNumber(int[] nums) {
-        Integer[] arr = new Integer[nums.length];
-        int i=0;
-        for(int num:nums){
-            arr[i]=num;
-            i++;
+        List<String> list = new ArrayList<>();
+        for (int num:nums){
+            list.add(String.valueOf(num));
         }
 
-        Arrays.sort(arr,(a, b)-> Integer.compare(a+b,b+a));
+        list.sort((a, b) -> (b+a).compareTo(a+b));
 
-        StringBuilder str = new StringBuilder();
-        for(int num:arr){
-            str.append(String.valueOf(num));
-        }
+        if(list.getFirst().equals("0")) return "0";
 
-        return str.toString();
+        return String.join("", list);
     }
 }

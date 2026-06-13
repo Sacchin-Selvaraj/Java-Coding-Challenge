@@ -3,6 +3,7 @@ package Streams;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class FrequencyStringByValue {
@@ -24,5 +25,9 @@ public class FrequencyStringByValue {
                 ));
 
         System.out.println(freqMap);
+
+        Optional<Character> nonRepeating = Optional.empty();
+
+        System.out.println(nonRepeating);
     }
 }

@@ -13,8 +13,7 @@ public class EmployeeDepartmentSalary {
 
         Map<String, List<Employee>> employeeMap = employeeList.stream()
                 .collect(Collectors.groupingBy(Employee::getRole,
-                        Collectors.collectingAndThen(
-                        toList(),
+                        Collectors.collectingAndThen(toList(),
                         list-> list
                                 .stream()
                                 .sorted((o1, o2) -> (int) (o2.salary-o1.salary)).limit(2)
@@ -45,6 +44,8 @@ public class EmployeeDepartmentSalary {
 
       System.out.println("Skills\n");
       treeSet.forEach(System.out::println);
+
+
 
     }
 }

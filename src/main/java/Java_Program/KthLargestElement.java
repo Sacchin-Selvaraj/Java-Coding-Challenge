@@ -7,6 +7,8 @@ public class KthLargestElement {
 
     public static int findKthLargest(int[] nums, int k) {
 
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
+        Integer[] arr  = queue.toArray(new Integer[0]);
         Arrays.sort(nums);
         return nums[nums.length-k];
     }
